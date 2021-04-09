@@ -22,13 +22,19 @@ class LongUrlController extends AbstractController
     {
         // creates a task object and initializes some data for this example
         $longUrl = new LongUrl();
+        /*
         $longUrl->setTask('Enter a loooonnnnng URL');
         $longUrl->shortify();
 
         $form = $this->createFormBuilder($longUrl)
             ->add('rawUrl', UrlType::class)
             ->getForm();
-
+*/
         // ...
+        $form = $this->createForm(TaskType::class, $longUrl);
+
+        return $this->render('templates/base.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }
