@@ -116,12 +116,11 @@
 
   </style>
   <script type="text/javascript">
-    let grub = (s) => {
-      let now = new Date();
-      now = now.toLocaleString();
-      console.log(`At {now} here is: {str1}`);
-      return s + "-" + s;
-    }
+	window.addEventListener('DOMContentLoaded', (event) => {
+	let typingInHere = document.getElementById('typeIn');
+    console.log('Seeing this so far [' + typingInHere.innerHTML + ']');
+    console.log('DOM fully loaded and parsed');
+});
   </script>
 
 </head>
@@ -131,26 +130,29 @@
   <div class="monde">
     <div class="square-large">
       <h1 class="title"><code>Pikl</code></h1>
-
-      {# templates/user/notifications.html.twig #}
-<h1>Hello {{ user_first_name }}!</h1>
-<p>You have {{ notifications|length }} new notifications.</p>
-
-
-
       <h2 class="subtitle">Turn your URRRLLL into an URL.</h2>
-      <div class="square-small">
-        <!-- /*==============================*/ -->
-        <form oninput="out1.value = grub(str1.value)">
-          <input class="core" type="textarea" name="str1" /><br>
-          <div class="core stripe"><output name="out1" for="str1">void</output></div>
-        </form>
+
+<p>Form One: {{ garlic }}!</p>
+<p>You have this form now:</p>
+
+<div class="square-small">
+  <!-- /*==============================*/ -->
+  {{form_start(form)}}
+<div>
+  <div class="core" type="textarea" name="str1" id='typeIn'>
+    {{form_row(form.longUrl)}}
+  </div>
+
+  <div class="core stripe"><output  for="str1">void</output></div>
+  <div style="background-color: darkorange;"  name="out1">
+    {{form_row(form.save)}}
+  </div>
+</div>
+{{form_end(form)}}
         <!-- /*==============================*/ -->
       </div>
 
 
-      {# templates/task/new.html.twig #}
-      {#}  {{ form(form) }} #}
     </div>
     <img class="brand" src=" http://cdn.onlinewebfonts.com/svg/img_481082.svg">
   </div>

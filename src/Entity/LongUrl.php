@@ -7,8 +7,16 @@ namespace App\Entity;
 
 class LongUrl
 {
+    protected $rawUrl;
     protected $longUrl;
     protected $shortUrl;
+
+    public function __construct(String $rawUrl = '')
+    {
+        $this->rawUrl = $rawUrl;
+        $this->longUrl = 'kitchener';
+        $this->shortUrl  = 'waterloo';
+    }
 
     public function getLongUrl(): string
     {

@@ -24,11 +24,16 @@
 [Forms in Sf](https://symfony.com/doc/4.4/forms.html)
 
 ## todo
-[ ] accessible image
+[x] 2nd route works
+[x] once routeOne twig works, undo the html of main
+[ ] data flows through TaskController.php
+[ ] add the custom error row from   https://symfony.com/doc/4.4/form/form_customization.html
+[ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS
+[x] accessible image
 [ } copy button
 [ ] leverage composer libraries
 [ ] remove unused USE statements
-[ ]  bin/console make:test TestCase LongUrlTest
+[x]  bin/console make:test TestCase LongUrlTest
 The UrlType field is a text field that prepends the submitted value with a given protocol (e.g. http://) if the submitted value doesn’t already have a protocol.
 
 ## Notes, to erase

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class LongUrlTest extends TestCase
 {
-    public function testSomething(): void
+    public function test(): void
     {
         $this->assertTrue(true);
     }

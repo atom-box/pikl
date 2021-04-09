@@ -3,13 +3,11 @@
 namespace App\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class LongUrlType extends AbstractType
+class OrderType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -20,6 +18,9 @@ class LongUrlType extends AbstractType
 }
 
 /*
+THIS IS HOW SYMFONY DOES
+FIELDS vs FORM: it mushes them together into things like this
+
 1) The form class contains all the directions needed to
 create the task form. In controllers extending from the
 AbstractController, use the createForm() helper (otherwise,
