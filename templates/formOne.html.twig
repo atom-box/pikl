@@ -83,7 +83,6 @@
     }
 
     .core {
-      color: #f66;
       text-align: center;
       margin: 1rem auto;
       overflow-wrap: break-word;
@@ -93,7 +92,6 @@
       height: 8rem;
       width: 15rem;
       background-color: var(--dark1);
-      color: yellow;
       border: solid white 0.1rem;
       overflow: scroll;
     }
@@ -103,25 +101,40 @@
       position: absolute;
       right: 2rem;
       bottom: 2rem;
-      width: 7%;
+      width: 12%;
     }
 
     .title {
-      font-size: 4rem;
-    }
+      font-size: 3rem;
+      padding: 0px 1px;
+      font-family: monospace;
+      text-shadow: 1px 1px 2px var(--dark1), 0 0 25px gray, 0 0 5px black;
+      color: var(--light2);
+      font-weight: 100;
+     }
 
     .subtitle {
       font-size: 2rem;
     }
 
+    .todo {
+      background-color: black;
+      color: white;
+      border: 6px, dotted, yellow;
+    }
+
   </style>
-  <script type="text/javascript">
-	window.addEventListener('DOMContentLoaded', (event) => {
-	let typingInHere = document.getElementById('typeIn');
-    console.log('Seeing this so far [' + typingInHere.innerHTML + ']');
-    console.log('DOM fully loaded and parsed');
-});
-  </script>
+
+{#
+SHOWS UP WITH
+<div>
+	<label for="form_longUrl" class="required">
+		Long url
+	</label>
+	<input type="text" id="form_longUrl" name="form[longUrl]" required="required" inputmode="url" value="Enter link here">
+</div>
+#}
+
 
 </head>
 
@@ -129,28 +142,21 @@
 
   <div class="monde">
     <div class="square-large">
-      <h1 class="title"><code>Pikl</code></h1>
-      <h2 class="subtitle">Turn your URRRLLL into an URL.</h2>
-
-<p>Form One: {{ garlic }}!</p>
-<p>You have this form now:</p>
-
+        <h1 class="title">link-pikl</h1>
 <div class="square-small">
   <!-- /*==============================*/ -->
   {{form_start(form)}}
 <div>
   <div class="core" type="textarea" name="str1" id='typeIn'>
-    {{form_row(form.longUrl)}}
+    {{form_row(form.rawUrl)}}
   </div>
-
-  <div class="core stripe"><output  for="str1">void</output></div>
-  <div style="background-color: darkorange;"  name="out1">
-    {{form_row(form.save)}}
-  </div>
+  <div>
+	  {{form_row(form.save, {'attr': {'class': 'todo'}})}}
+	</div>
 </div>
 {{form_end(form)}}
-        <!-- /*==============================*/ -->
-      </div>
+<!-- /*==============================*/ -->
+</div>
 
 
     </div>
