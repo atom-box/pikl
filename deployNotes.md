@@ -4,11 +4,10 @@
 
 ### sessions
 ```
-CREATE TABLE [IF NOT EXISTS] table_name (
-   column1 datatype(length) column_contraint,
-   column2 datatype(length) column_contraint,
-   column3 datatype(length) column_contraint,
-   table_constraints
+CREATE TABLE IF NOT EXISTS sessions (
+    session_id  serial,
+    user_id     int NOT NULL,
+    date        timestamp
 );
 ```
 
@@ -25,5 +24,10 @@ CREATE TABLE IF NOT EXISTS users (
 );
 ```
 
-### session_lines
-
+### links
+CREATE TABLE IF NOT EXISTS links (
+    link_id     serial,
+    session_id  int,
+    long        varchar(1000) NOT NULL,
+    short       varchar(40) UNIQUE
+);
